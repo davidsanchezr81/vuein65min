@@ -1,13 +1,26 @@
 <template>
   <div class="hello">
-    Skills
+    {{ name}} 
+
+    {{ btnState ? 'The Button is Disabled' : 'The button is Enabled'}}
+
+
+
+    <!-- Continue on min 21:00 https://www.youtube.com/watch?v=78tNYZUS-ps -->
+
+    <button v-on:click="changename" v-bind:disabled = "btnState">Change Name</button>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Skills',
-  props: {
+  data(){
+
+    return {
+      name : 'David',
+      btnState:false
+    }
     
   }
 }
